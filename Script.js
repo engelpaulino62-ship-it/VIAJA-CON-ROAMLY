@@ -126,7 +126,7 @@ function initCountrySearch() {
     
     if (found) {
       // si estamos en index, redirigir a destinos
-      if (window.location.pathname.includes('Index.html')) {
+      if (window.location.pathname.includes('index.html')) {
         window.location.href = 'Destinos.html';
       }
     } else if (query !== '') {
