@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<HTML lang="ES">
+    <HEAD>
+        <META charset="UTF-8">
+        <link rel="stylesheet" href="Style.css">
+        <title>Destinos - Roamly.com</title>
+    </HEAD>
+
+    <body>
+        <div class="container">
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="main-content">
+                <!-- MENÚ HORIZONTAL CON LOGO -->
+                <nav class="site-nav">
+                    <div class="nav-container">
+                        <div class="logo-nav">
+                            <img src="IMAGES/ROAMLY.png" alt="logo" class="logo-nav-img">
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="countrySearch" placeholder="Buscar destino...">
+                            <div id="suggestions"></div>
+                        </div>
+                        <ul>
+                            <li><a href="Index.html">Inicio</a></li>
+                            <li><a href="Destinos.html">Destinos</a></li>
+                            <li><a href="Cuenta.html">Cuenta</a></li>
+                            <li><a href="Ayuda.html">Ayuda</a></li>
+                            <li><a href="Nosotros.html">Nosotros</a></li>
+                            <li class="nav-trips">
+                                <a href="MisViajes.html" title="Mis Viajes"><img src="IMAGES/Avion.png" alt="Mis Viajes" class="airplane-icon"></a>
+                                <span class="notification-dot" id="notificationDot"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+         <section>
+<h2>Destacados</h2>
+
+<div class="carrusel">
+  <div class="carrusel-container" id="carrusel">
+    <img src="IMAGES/3.png" alt="">
+    <img src="IMAGES/2.png" alt="">
+    <img src="IMAGES/1.png" alt="">
+    <img src="IMAGES/4.png" alt="">
+  </div>
+</div>
+
+                <!-- CATEGORÍAS PERSONALIZADAS -->
+                <section class="section">
+                    <h2>PLAYAS Y NATURALEZA</h2>
+                    <p class="section-description">Escoge destinos para descansar o conectarte con la naturaleza.</p>
+                    <div class="gallery destinations-gallery" id="playasNaturalezaGallery">
+                        <div class="destination-card" data-pais="Tailandia" data-imagen="IMAGES PAISES/TAILANDIA.jpeg">
+                            <img src="IMAGES PAISES/TAILANDIA.jpeg" alt="Tailandia">
+                            <div class="destination-overlay"><h3>Tailandia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="México" data-imagen="IMAGES PAISES/MEXICO.jpeg">
+                            <img src="IMAGES PAISES/MEXICO.jpeg" alt="México">
+                            <div class="destination-overlay"><h3>México</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="República Dominicana" data-imagen="IMAGES PAISES/REP DOM.jpeg">
+                            <img src="IMAGES PAISES/REP DOM.jpeg" alt="República Dominicana">
+                            <div class="destination-overlay"><h3>Rep. Dominicana</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Emiratos Árabes Unidos" data-imagen="IMAGES PAISES/EMIRATOS ARABES.jpeg">
+                            <img src="IMAGES PAISES/EMIRATOS ARABES.jpeg" alt="Emiratos Árabes Unidos">
+                            <div class="destination-overlay"><h3>Emiratos</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Australia" data-imagen="IMAGES PAISES/AUSTRALIA.jpeg">
+                            <img src="IMAGES PAISES/AUSTRALIA.jpeg" alt="Australia">
+                            <div class="destination-overlay"><h3>Australia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Brasil" data-imagen="IMAGES PAISES/BRASIL.jpeg">
+                            <img src="IMAGES PAISES/BRASIL.jpeg" alt="Brasil">
+                            <div class="destination-overlay"><h3>Brasil</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Sudáfrica" data-imagen="IMAGES PAISES/SUDAFRICA.jpeg">
+                            <img src="IMAGES PAISES/SUDAFRICA.jpeg" alt="Sudáfrica">
+                            <div class="destination-overlay"><h3>Sudáfrica</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Colombia" data-imagen="IMAGES PAISES/COLOMBIA.jpeg">
+                            <img src="IMAGES PAISES/COLOMBIA.jpeg" alt="Colombia">
+                            <div class="destination-overlay"><h3>Colombia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Grecia" data-imagen="IMAGES PAISES/GRECIA.jpeg">
+                            <img src="IMAGES PAISES/GRECIA.jpeg" alt="Grecia">
+                            <div class="destination-overlay"><h3>Grecia</h3></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>CULTURA E HISTORIA</h2>
+                    <p class="section-description">Lugares ricos en patrimonio y tradiciones.</p>
+                    <div class="gallery destinations-gallery" id="culturaHistoriaGallery">
+                        <div class="destination-card" data-pais="Francia" data-imagen="IMAGES PAISES/FRANCIA.jpeg">
+                            <img src="IMAGES PAISES/FRANCIA.jpeg" alt="Francia">
+                            <div class="destination-overlay"><h3>Francia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Italia" data-imagen="IMAGES PAISES/ITALIA.jpeg">
+                            <img src="IMAGES PAISES/ITALIA.jpeg" alt="Italia">
+                            <div class="destination-overlay"><h3>Italia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="España" data-imagen="IMAGES PAISES/ESPAÑA.jpeg">
+                            <img src="IMAGES PAISES/ESPAÑA.jpeg" alt="España">
+                            <div class="destination-overlay"><h3>España</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="India" data-imagen="IMAGES PAISES/INDIA.jpeg">
+                            <img src="IMAGES PAISES/INDIA.jpeg" alt="India">
+                            <div class="destination-overlay"><h3>India</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Egipto" data-imagen="IMAGES PAISES/EGIPTO.jpeg">
+                            <img src="IMAGES PAISES/EGIPTO.jpeg" alt="Egipto">
+                            <div class="destination-overlay"><h3>Egipto</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Jordania" data-imagen="IMAGES PAISES/JORDANIA.jpeg">
+                            <img src="IMAGES PAISES/JORDANIA.jpeg" alt="Jordania">
+                            <div class="destination-overlay"><h3>Jordania</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Portugal" data-imagen="IMAGES PAISES/PORTUGAL.jpeg">
+                            <img src="IMAGES PAISES/PORTUGAL.jpeg" alt="Portugal">
+                            <div class="destination-overlay"><h3>Portugal</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Polonia" data-imagen="IMAGES PAISES/POLONIA.jpeg">
+                            <img src="IMAGES PAISES/POLONIA.jpeg" alt="Polonia">
+                            <div class="destination-overlay"><h3>Polonia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Suiza" data-imagen="IMAGES PAISES/SUIZA.jpeg">
+                            <img src="IMAGES PAISES/SUIZA.jpeg" alt="Suiza">
+                            <div class="destination-overlay"><h3>Suiza</h3></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>CIUDADES MODERNAS Y VIDA URBANA</h2>
+                    <p class="section-description">Experimenta energía metropolitana y rascacielos.</p>
+                    <div class="gallery destinations-gallery" id="urbanasGallery">
+                        <div class="destination-card" data-pais="Estados Unidos" data-imagen="IMAGES PAISES/ESTADOS UNIDOS.jpeg">
+                            <img src="IMAGES PAISES/ESTADOS UNIDOS.jpeg" alt="Estados Unidos">
+                            <div class="destination-overlay"><h3>Estados Unidos</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Japón" data-imagen="IMAGES PAISES/JAPON.jpeg">
+                            <img src="IMAGES PAISES/JAPON.jpeg" alt="Japón">
+                            <div class="destination-overlay"><h3>Japón</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="China" data-imagen="IMAGES PAISES/CHINA.jpeg">
+                            <img src="IMAGES PAISES/CHINA.jpeg" alt="China">
+                            <div class="destination-overlay"><h3>China</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Corea del Sur" data-imagen="IMAGES PAISES/COREA DEL SUR.jpeg">
+                            <img src="IMAGES PAISES/COREA DEL SUR.jpeg" alt="Corea del Sur">
+                            <div class="destination-overlay"><h3>Corea del Sur</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Alemania" data-imagen="IMAGES PAISES/ALEMANIA.jpeg">
+                            <img src="IMAGES PAISES/ALEMANIA.jpeg" alt="Alemania">
+                            <div class="destination-overlay"><h3>Alemania</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Canadá" data-imagen="IMAGES PAISES/canada.jpeg">
+                            <img src="IMAGES PAISES/canada.jpeg" alt="Canadá">
+                            <div class="destination-overlay"><h3>Canadá</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Inglaterra" data-imagen="IMAGES PAISES/INGLATERRA.jpeg">
+                            <img src="IMAGES PAISES/INGLATERRA.jpeg" alt="Inglaterra">
+                            <div class="destination-overlay"><h3>Inglaterra</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Países Bajos" data-imagen="IMAGES PAISES/PAISES BAJOS.jpeg">
+                            <img src="IMAGES PAISES/PAISES BAJOS.jpeg" alt="Países Bajos">
+                            <div class="destination-overlay"><h3>Países Bajos</h3></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>FIESTA Y ENTRETENIMIENTO</h2>
+                    <p class="section-description">Destinos para bailar, celebrar y divertirse.</p>
+                    <div class="gallery destinations-gallery" id="fiestaGallery">
+                        <div class="destination-card" data-pais="Brasil" data-imagen="IMAGES PAISES/BRASIL.jpeg">
+                            <img src="IMAGES PAISES/BRASIL.jpeg" alt="Brasil">
+                            <div class="destination-overlay"><h3>Brasil</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="España" data-imagen="IMAGES PAISES/ESPAÑA.jpeg">
+                            <img src="IMAGES PAISES/ESPAÑA.jpeg" alt="España">
+                            <div class="destination-overlay"><h3>España</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Estados Unidos" data-imagen="IMAGES PAISES/ESTADOS UNIDOS.jpeg">
+                            <img src="IMAGES PAISES/ESTADOS UNIDOS.jpeg" alt="Estados Unidos">
+                            <div class="destination-overlay"><h3>Estados Unidos</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="México" data-imagen="IMAGES PAISES/MEXICO.jpeg">
+                            <img src="IMAGES PAISES/MEXICO.jpeg" alt="México">
+                            <div class="destination-overlay"><h3>México</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Colombia" data-imagen="IMAGES PAISES/COLOMBIA.jpeg">
+                            <img src="IMAGES PAISES/COLOMBIA.jpeg" alt="Colombia">
+                            <div class="destination-overlay"><h3>Colombia</h3></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>AVENTURA Y EXPERIENCIAS</h2>
+                    <p class="section-description">Para los que buscan emociones y descubrimientos.</p>
+                    <div class="gallery destinations-gallery" id="aventuraExperienciasGallery">
+                        <div class="destination-card" data-pais="Canadá" data-imagen="IMAGES PAISES/canada.jpeg">
+                            <img src="IMAGES PAISES/canada.jpeg" alt="Canadá">
+                            <div class="destination-overlay"><h3>Canadá</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Turquía" data-imagen="IMAGES PAISES/TURKIA.jpeg">
+                            <img src="IMAGES PAISES/TURKIA.jpeg" alt="Turquía">
+                            <div class="destination-overlay"><h3>Turquía</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Jordania" data-imagen="IMAGES PAISES/JORDANIA.jpeg">
+                            <img src="IMAGES PAISES/JORDANIA.jpeg" alt="Jordania">
+                            <div class="destination-overlay"><h3>Jordania</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Sudáfrica" data-imagen="IMAGES PAISES/SUDAFRICA.jpeg">
+                            <img src="IMAGES PAISES/SUDAFRICA.jpeg" alt="Sudáfrica">
+                            <div class="destination-overlay"><h3>Sudáfrica</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="Polonia" data-imagen="IMAGES PAISES/POLONIA.jpeg">
+                            <img src="IMAGES PAISES/POLONIA.jpeg" alt="Polonia">
+                            <div class="destination-overlay"><h3>Polonia</h3></div>
+                        </div>
+                        <div class="destination-card" data-pais="China" data-imagen="IMAGES PAISES/CHINA.jpeg">
+                            <img src="IMAGES PAISES/CHINA.jpeg" alt="China">
+                            <div class="destination-overlay"><h3>China</h3></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AUDIO -->
+
+
+                <!-- MODAL PARA SELECCIONAR CIUDADES -->
+                <div id="citiesModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 id="modalTitle">Ciudades</h2>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div id="citiesList" class="cities-list"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal detallado para origen/fecha/personas (compartido) -->
+                <div class="modal" id="cityModal" aria-hidden="true">
+                    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                        <div class="modal-header">
+                            <h2 id="modalTitle">Seleccionar viaje</h2>
+                            <span class="close" id="modalClose" aria-label="Cerrar">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <form id="tripForm" class="support-form">
+                                <div class="form-group">
+                                    <label for="destination">Destino</label>
+                                    <input type="text" id="destination" name="destination" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="origin">País de origen</label>
+                                    <input type="text" id="origin" name="origin" placeholder="País de salida" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="date">Fecha</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="people">Personas</label>
+                                    <input type="number" id="people" name="people" min="1" value="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio estimado</label>
+                                    <div id="pricePreview" class="price-preview"></div>
+                                </div>
+
+                                <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:18px;">
+                                    <button type="button" class="support-btn" id="confirmTrip">Confirmar</button>
+                                    <button type="button" class="support-btn" id="cancelTrip" style="background:#bdc3c7;color:#111;">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="pie-pagina">
+            <div class="footer-contenido">
+                <div class="info-contacto">
+                    <h3>ROAMLY</h3>
+                    <p>Calle Falsa 123, Santo Domingo, República Dominicana</p>
+                    <p>Tel: +1 809-505-2010</p>
+                </div>
+                
+                <div class="horario">
+                    <h4>Horario de Atención</h4>
+                    <p>Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+
+                <div class="redes">
+                    <h4>Síguenos</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ROAMLY. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Base de datos de países y ciudades
+            const paisesConCiudades = {
+                "Francia": ["París", "Lyon", "Marsella", "Toulouse", "Niza", "Burdeos"],
+                "Italia": ["Roma", "Milán", "Venecia", "Florencia", "Nápoles", "Génova"],
+                "Grecia": ["Atenas", "Salónica", "Rodas", "Creta", "Santorini", "Miconos"],
+                "Japón": ["Tokio", "Kioto", "Osaka", "Hiroshima", "Yokohama", "Nagoya"],
+                "Tailandia": ["Bangkok", "Phuket", "Chiang Mai", "Pattaya", "Krabi", "Ayutthaya"],
+                "Turquía": ["Estambul", "Esmirna", "Ankara", "Esmirna", "Antalya", "Capadocia"],
+                "México": ["Ciudad de México", "Cancún", "Playa del Carmen", "Guadalajara", "Monterrey", "Oaxaca"],
+                "República Dominicana": ["Santo Domingo", "Punta Cana", "Santiago", "La Romana", "Puerto Plata", "Higüey"],
+                "Emiratos Árabes Unidos": ["Dubái", "Abu Dabi", "Sharjah", "Ajmán", "Ras Al Jaimah", "Fujairah"],
+                "Canadá": ["Toronto", "Vancouver", "Montreal", "Calgary", "Ottawa", "Banff"],
+                "Alemania": ["Berlín", "Múnich", "Hamburgo", "Colonia"],
+                "Australia": ["Sídney", "Melbourne", "Brisbane", "Perth"],
+                "Brasil": ["Río de Janeiro", "São Paulo", "Brasilia", "Salvador"],
+                "China": ["Pekín", "Shanghái", "Guangzhou", "Shenzhen"],
+                "Colombia": ["Bogotá", "Medellín", "Cartagena", "Cali"],
+                "Corea del Sur": ["Seúl", "Busan", "Incheon", "Daegu"],
+                "Egipto": ["El Cairo", "Alejandría", "Luxor", "Asuán"],
+                "España": ["Madrid", "Barcelona", "Sevilla", "Valencia"],
+                "Estados Unidos": ["Nueva York", "Los Ángeles", "Chicago", "Miami"],
+                "India": ["Nueva Delhi", "Mumbai", "Bangalore", "Calcuta"],
+                "Inglaterra": ["Londres", "Manchester", "Birmingham", "Liverpool"],
+                "Jordania": ["Amán", "Aqaba", "Jerash", "Wadi Rum"],
+                "Países Bajos": ["Ámsterdam", "Róterdam", "La Haya", "Utrecht"],
+                "Polonia": ["Varsovia", "Cracovia", "Gdansk", "Wroclaw"],
+                "Portugal": ["Lisboa", "Oporto", "Faro", "Coimbra"],
+                "Sudáfrica": ["Ciudad del Cabo", "Johannesburgo", "Durban", "Pretoria"],
+                "Suiza": ["Zúrich", "Ginebra", "Berna", "Lucerna"]
+            };
+
+            // Variables globales
+            const modal = document.getElementById('citiesModal');
+            const closeBtn = document.querySelector('.close');
+            const citiesList = document.getElementById('citiesList');
+            const modalTitle = document.getElementById('modalTitle');
+            let selectedCountry = '';
+            let trips = JSON.parse(localStorage.getItem('trips')) || [];
+            let tripsViewed = JSON.parse(localStorage.getItem('tripsViewed')) || false;
+
+            // Cargar todas las tarjetas de destinos
+            function initDestinationCards() {
+                const allCards = document.querySelectorAll('.destination-card');
+                allCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        const pais = this.getAttribute('data-pais');
+                        openCitiesModal(pais);
+                    });
+                });
+                updateNotificationDot();
+            }
+
+            // Abrir modal con ciudades
+            function openCitiesModal(pais) {
+                selectedCountry = pais;
+                modalTitle.textContent = pais;
+                citiesList.innerHTML = '';
+
+                const ciudades = paisesConCiudades[pais] || [];
+                ciudades.forEach(ciudad => {
+                    const ciudadDiv = document.createElement('div');
+                    ciudadDiv.className = 'city-item';
+                    ciudadDiv.innerHTML = `
+                        <div class="city-info">
+                            <h3>${ciudad}</h3>
+                            <p>${pais}</p>
+                        </div>
+                        <button class="btn-select" onclick="selectTrip('${pais}', '${ciudad}')">Seleccionar</button>
+                    `;
+                    citiesList.appendChild(ciudadDiv);
+                });
+
+                modal.style.display = 'block';
+            }
+
+            // Seleccionar un viaje: abrir modal detallado para origen/fecha/personas
+            function selectTrip(pais, ciudad) {
+                // cerrar modal de lista de ciudades
+                modal.style.display = 'none';
+                // abrir modal detallado
+                openDetailedModal(`${ciudad}, ${pais}`);
+            }
+
+            // Funciones para modal detallado (origen/fecha/personas)
+            function openDetailedModal(dest) {
+                const detailed = document.getElementById('cityModal');
+                if (!detailed) return;
+                const destEl = document.getElementById('destination');
+                const dateEl = document.getElementById('date');
+                const peopleEl = document.getElementById('people');
+                const priceEl = document.getElementById('pricePreview');
+                destEl.value = dest;
+                document.getElementById('origin').value = '';
+                if (dateEl) dateEl.value = '';
+                if (peopleEl) peopleEl.value = '1';
+                if (priceEl) priceEl.textContent = '';
+                detailed.style.display = 'block';
+                // enlazar botones si no están enlazados
+                bindDetailedModalButtons();
+            }
+
+            function bindDetailedModalButtons() {
+                const detailed = document.getElementById('cityModal');
+                const modalClose = document.getElementById('modalClose');
+                const cancelBtn = document.getElementById('cancelTrip');
+                const confirmBtn = document.getElementById('confirmTrip');
+
+                if (!detailed) return;
+
+                if (modalClose && !modalClose._bound) {
+                    modalClose.addEventListener('click', () => detailed.style.display = 'none');
+                    modalClose._bound = true;
+                }
+                if (cancelBtn && !cancelBtn._bound) {
+                    cancelBtn.addEventListener('click', () => detailed.style.display = 'none');
+                    cancelBtn._bound = true;
+                }
+                if (confirmBtn && !confirmBtn._bound) {
+                    confirmBtn.addEventListener('click', () => {
+                        const destination = document.getElementById('destination').value;
+                        const origin = document.getElementById('origin').value.trim();
+                        const date = document.getElementById('date').value;
+                        const people = parseInt(document.getElementById('people').value, 10) || 1;
+
+                        if (!origin) { alert('Por favor indica tu país de origen.'); return; }
+                        if (!date) { alert('Por favor selecciona una fecha.'); return; }
+
+                        const price = calculateTripPrice(destination, people, date);
+                        const viaje = {
+                            id: Date.now(),
+                            destination: destination,
+                            origin: origin,
+                            date: date,
+                            people: people,
+                            price: price
+                        };
+                        trips.push(viaje);
+                        localStorage.setItem('trips', JSON.stringify(trips));
+                        tripsViewed = false;
+                        localStorage.setItem('tripsViewed', JSON.stringify(tripsViewed));
+                        updateNotificationDot();
+                        detailed.style.display = 'none';
+                        showConfirmation(`✓ ¡Viaje a ${destination} guardado por $${price}!`);
+                    });
+                    confirmBtn._bound = true;
+                }
+            }
+
+            // Mostrar confirmación
+            function showConfirmation(message) {
+                const confirmation = document.createElement('div');
+                confirmation.className = 'confirmation-message';
+                confirmation.textContent = message;
+                document.body.appendChild(confirmation);
+                
+                setTimeout(() => {
+                    confirmation.remove();
+                }, 2000);
+            }
+
+            // Actualizar el punto de notificación
+            function updateNotificationDot() {
+                const notificationDot = document.getElementById('notificationDot');
+                if (trips.length > 0 && !tripsViewed) {
+                    notificationDot.style.display = 'block';
+                } else {
+                    notificationDot.style.display = 'none';
+                }
+            }
+
+            // Cerrar modal
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+
+            // Inicializar
+            document.addEventListener('DOMContentLoaded', initDestinationCards);
+        </script>
+        <script src="notifications.js"></script>
+    </body>
+
+    <script src="script.js"></script>
+</HTML>

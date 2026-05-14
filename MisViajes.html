@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<HTML lang="ES">
+    <HEAD>
+        <META charset="UTF-8">
+        <link rel="stylesheet" href="Style.css">
+        <title>Mis Viajes - Roamly.com</title>
+    </HEAD>
+
+    <body>
+        <div class="container">
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="main-content">
+                <!-- MENÚ HORIZONTAL CON LOGO -->
+                <nav class="site-nav">
+                    <div class="nav-container">
+                        <div class="logo-nav">
+                            <img src="IMAGES/ROAMLY.png" alt="logo" class="logo-nav-img">
+                        </div>
+                        <ul>
+                            <li><a href="Index.html">Inicio</a></li>
+                            <li><a href="Destinos.html">Destinos</a></li>
+                            <li><a href="Cuenta.html">Cuenta</a></li>
+                            <li><a href="Ayuda.html">Ayuda</a></li>
+                            <li><a href="Nosotros.html">Nosotros</a></li>
+                            <li class="nav-trips">
+                                <a href="MisViajes.html" title="Mis Viajes"><img src="IMAGES/Avion.png" alt="Mis Viajes" class="airplane-icon"></a>
+                                <span class="notification-dot" id="notificationDot"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- MIS VIAJES -->
+                <section class=" >
+                    <h2>MIS VIAJES ✈️</h2>
+                    <p class="section-description">Aquí están todos los destinos que has seleccionado</p>
+                    <div id="tripsList" class="trips-list">
+                        <!-- Los viajes se cargarán dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- ESTADÍSTICAS -->
+                <section class="section trips-stats">
+                    <h3>Estadísticas de tus Viajes</h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalTrips">0</div>
+                            <p>Destinos Seleccionados</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalCountries">$0</div>
+                            <p>Precio Total</p>
+                        </div>
+                        <div class="stat-card">
+                            <button class="btn-gradient" onclick="clearAllTrips()">Limpiar Todo</button>
+                            <p>Resetear viajes</p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="pie-pagina">
+            <div class="footer-contenido">
+                <div class="info-contacto">
+                    <h3>ROAMLY</h3>
+                    <p>Calle Falsa 123, Santo Domingo, República Dominicana</p>
+                    <p>Tel: +1 809-505-2010</p>
+                </div>
+                
+                <div class="horario">
+                    <h4>Horario de Atención</h4>
+                    <p>Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+
+                <div class="redes">
+                    <h4>Síguenos</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ROAMLY. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="notifications.js"></script>
+        <script src="script.js"></script>
+        <script>
+            let trips = JSON.parse(localStorage.getItem('trips')) || [];
+
+            function normalizeCountryName(name) {
+                if (!name) return '';
+                return name
+                    .toString()
+                    .trim()
+                    .normalize('NFD')
+                    .replace(/\p{Diacritic}/gu, '')
+                    .replace(/\s+/g, ' ')
+                    .replace(/\s/g, ' ')
+                    .toLowerCase();
+            }
+
+            function getCountryImage(country) {
+                const images = {
+                    "francia": "IMAGES PAISES/FRANCIA.jpeg",
+                    "italia": "IMAGES PAISES/ITALIA.jpeg",
+                    "republica dominicana": "IMAGES PAISES/REP DOM.jpeg",
+                    "emiratos arabes unidos": "IMAGES PAISES/EMIRATOS ARABES.jpeg",
+                    "grecia": "IMAGES PAISES/GRECIA.jpeg",
+                    "japon": "IMAGES PAISES/JAPON.jpeg",
+                    "mexico": "IMAGES PAISES/MEXICO.jpeg",
+                    "canada": "IMAGES PAISES/CANADA.jpeg",
+                    "alemania": "IMAGES PAISES/ALEMANIA.jpeg",
+                    "brasil": "IMAGES PAISES/BRASIL.jpeg",
+                    "tailandia": "IMAGES PAISES/TAILANDIA.jpeg",
+                    "australia": "IMAGES PAISES/AUSTRALIA.jpeg",
+                    "china": "IMAGES PAISES/CHINA.jpeg",
+                    "estados unidos": "IMAGES PAISES/ESTADOS UNIDOS.jpeg",
+                    "india": "IMAGES PAISES/INDIA.jpeg",
+                    "espana": "IMAGES PAISES/ESPAÑA.jpeg",
+                    "turquia": "IMAGES PAISES/TURKIA.jpeg",
+                    "jordania": "IMAGES PAISES/JORDANIA.jpeg",
+                    "portugal": "IMAGES PAISES/PORTUGAL.jpeg",
+                    "polonia": "IMAGES PAISES/POLONIA.jpeg",
+                    "paises bajos": "IMAGES PAISES/PAISES BAJOS.jpeg",
+                    "sudafrica": "IMAGES PAISES/SUDAFRICA.jpeg",
+                    "colombia": "IMAGES PAISES/COLOMBIA.jpeg",
+                    "corea del sur": "IMAGES PAISES/COREA DEL SUR.jpeg",
+                    "egipto": "IMAGES PAISES/EGIPTO.jpeg",
+                    "inglaterra": "IMAGES PAISES/INGLATERRA.jpeg",
+                    "suiza": "IMAGES PAISES/SUIZA.jpeg"
+                };
+                return images[normalizeCountryName(country)] || 'IMAGES/ROAMLY.png';
+            }
+
+            // Cargar viajes al abrir la página
+            function loadTrips() {
+                const tripsList = document.getElementById('tripsList');
+                const totalTrips = document.getElementById('totalTrips');
+                const totalCountries = document.getElementById('totalCountries');
+
+                if (trips.length === 0) {
+                    tripsList.innerHTML = `
+                        <div class="empty-state">
+                            <p style="font-size: 24px; margin-bottom: 10px;">📋</p>
+                            <h3>No tienes viajes seleccionados</h3>
+                            <p>¡Ve a <a href="Destinos.html">Destinos</a> y selecciona los lugares que quieres visitar!</p>
+                        </div>
+                    `;
+                    totalTrips.textContent = '0';
+                    totalCountries.textContent = '0';
+                    return;
+                }
+
+                // Mostrar viajes
+                tripsList.innerHTML = '';
+                trips.forEach((trip, index) => {
+                    // adapt formats from different storage versions
+                    let ciudad = trip.ciudad || '';
+                    let pais = trip.pais || '';
+                    let fecha = trip.fecha || '';
+                    let price = trip.price || '';
+                    if (trip.destination) {
+                        const parts = trip.destination.split(',').map(part => part.trim());
+                        if (!ciudad && parts.length > 0) {
+                            ciudad = parts[0];
+                        }
+                        if (!pais && parts.length > 1) {
+                            pais = parts[1];
+                        } else if (!pais && parts.length === 1) {
+                            pais = parts[0];
+                        }
+                    }
+                    if (!fecha && trip.date) {
+                        fecha = trip.date;
+                    }
+
+                    const imageUrl = getCountryImage(pais);
+                    const tripCard = document.createElement('div');
+                    tripCard.className = 'trip-card';
+                    tripCard.innerHTML = `
+                        <div class="trip-image">
+                            <img src="${imageUrl}" alt="${ciudad}, ${pais}">
+                        </div>
+                        <div class="trip-content">
+                            <div class="trip-info">
+                                <h3>${ciudad}</h3>
+                                <p class="trip-country">${pais}</p>
+                                <p class="trip-date">Agregado: ${fecha}${price ? ' — <span class="trip-price">$' + price + '</span>' : ''}</p>
+                            </div>
+                            <button class="btn-remove" onclick="removeTrip(${index})" aria-label="Eliminar viaje">×</button>
+                        </div>
+                    `;
+                    tripsList.prepend(tripCard);
+                });
+
+                // Actualizar estadísticas
+                totalTrips.textContent = trips.length;
+                // calcular suma total de precios
+                const totalPrice = trips.reduce((sum, t) => sum + (t.price || 0), 0);
+                totalCountries.textContent = '$' + totalPrice;
+                // Marcar viajes como vistos
+                localStorage.setItem('tripsViewed', JSON.stringify(true));
+                updateNotificationDot();
+            }
+
+            // Eliminar un viaje
+            function removeTrip(index) {
+                trips.splice(index, 1);
+                localStorage.setItem('trips', JSON.stringify(trips));
+                loadTrips();
+                updateNotificationDot();
+            }
+
+            // Limpiar todos los viajes
+            function clearAllTrips() {
+                if (confirm('¿Estás seguro de que deseas eliminar todos tus viajes?')) {
+                    trips = [];
+                    localStorage.setItem('trips', JSON.stringify(trips));
+                    loadTrips();
+                    updateNotificationDot();
+                }
+            }
+
+            // Actualizar punto de notificación
+            function updateNotificationDot() {
+                const notificationDot = document.getElementById('notificationDot');
+                if (notificationDot) {
+                    trips = JSON.parse(localStorage.getItem('trips')) || [];
+                    const tripsViewed = JSON.parse(localStorage.getItem('tripsViewed')) || true;
+                    
+                    if (trips.length > 0 && !tripsViewed) {
+                        notificationDot.style.display = 'block';
+                    } else {
+                        notificationDot.style.display = 'none';
+                    }
+                }
+            }
+
+            // Inicializar
+            document.addEventListener('DOMContentLoaded', loadTrips);
+        </script>
+    </body>
+</HTML>

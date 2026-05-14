@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<HTML lang="ES">
+    <HEAD>
+        <META charset="UTF-8">
+        <link rel="stylesheet" href="Style.css">
+        <title>Ayuda - Roamly.com</title>
+    </HEAD>
+
+    <body>
+        <div class="container">
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="main-content">
+                <!-- MENÚ HORIZONTAL CON LOGO -->
+                <nav class="site-nav">
+                    <div class="nav-container">
+                        <div class="logo-nav">
+                            <img src="IMAGES/ROAMLY.png" alt="logo" class="logo-nav-img">
+                        </div>
+                        <ul>
+                            <li><a href="Index.html">Inicio</a></li>
+                            <li><a href="Destinos.html">Destinos</a></li>
+                            <li><a href="Cuenta.html">Cuenta</a></li>
+                            <li><a href="Ayuda.html">Ayuda</a></li>
+                            <li><a href="Nosotros.html">Nosotros</a></li>
+                            <li class="nav-trips">
+                                <a href="MisViajes.html" title="Mis Viajes"><img src="IMAGES/Avion.png" alt="Mis Viajes" class="airplane-icon"></a>
+                                <span class="notification-dot" id="notificationDot"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- FORMULARIO DE SOPORTE -->
+                <section class="section">
+                    <div class="support-card">
+                        <h2>¿Necesitas ayuda? Escríbenos</h2>
+                        <p class="section-description">Cuéntanos tu problema o duda y nuestro equipo te responderá lo antes posible.</p>
+                        <form id="supportForm" class="support-form">
+                            <div class="form-group">
+                                <label for="supportName">Nombre</label>
+                                <input type="text" id="supportName" name="supportName" placeholder="Tu nombre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="supportEmail">Correo electrónico</label>
+                                <input type="email" id="supportEmail" name="supportEmail" placeholder="tu@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="supportSubject">Asunto</label>
+                                <select id="supportSubject" name="supportSubject" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="tecnico">Problema técnico</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="reserva">Pago / Reservas</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="supportMessage">Mensaje</label>
+                                <textarea id="supportMessage" name="supportMessage" rows="5" placeholder="Describe tu problema o pregunta" required></textarea>
+                            </div>
+
+                            <button type="submit" class="support-btn">Enviar</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- PREGUNTAS FRECUENTES -->
+                <section class="section">
+                    <h2>PREGUNTAS FRECUENTES</h2>
+                    <p class="section-description">Encuentra respuestas a las preguntas más comunes sobre nuestros servicios</p>
+                    <div style="padding: 20px; text-align: left;">
+                        <h3>¿Cómo reservo un viaje?</h3>
+                        <p>Puedes reservar directamente desde nuestra plataforma seleccionando tu destino, fechas y preferencias.</p>
+                        <h3>¿Cuál es la política de cancelación?</h3>
+                        <p>Contáctanos para conocer los detalles de nuestra política de cancelación según tu reserva.</p>
+                        <h3>¿Existen algunas ofertas especiales?</h3>
+                        <p>Si. cuando las hay se anuncian en nuestra plataforma.</p>
+                    </div>
+                </section>
+
+        <!-- FOOTER -->
+        <footer class="pie-pagina">
+            <div class="footer-contenido">
+                <div class="info-contacto">
+                    <h3>ROAMLY</h3>
+                    <p>Calle Falsa 123, Santo Domingo, República Dominicana</p>
+                    <p>Tel: +1 809-505-2010</p>
+                </div>
+                
+                <div class="horario">
+                    <h4>Horario de Atención</h4>
+                    <p>Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+
+                <div class="redes">
+                    <h4>Síguenos</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ROAMLY. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="notifications.js"></script>
+        <script src="script.js"></script>
+        <script>
+            // Manejo del formulario de soporte (no envía a servidor, solo muestra confirmación)
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('supportForm');
+                if (!form) return;
+
+                function validEmail(email) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                }
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('supportName').value.trim();
+                    const email = document.getElementById('supportEmail').value.trim();
+                    const subject = document.getElementById('supportSubject').value;
+                    const message = document.getElementById('supportMessage').value.trim();
+
+                    if (!name || !email || !subject || !message) {
+                        alert('Por favor completa todos los campos.');
+                        return;
+                    }
+
+                    if (!validEmail(email)) {
+                        alert('Por favor ingresa un correo electrónico válido.');
+                        return;
+                    }
+
+                    // Guardar localmente (opcional) para revisión
+                    const stored = JSON.parse(localStorage.getItem('supportMessages') || '[]');
+                    stored.push({ name, email, subject, message, date: new Date().toLocaleString() });
+                    localStorage.setItem('supportMessages', JSON.stringify(stored));
+
+                    // Mostrar confirmación visual
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'confirmation-message';
+                    confirmation.textContent = 'Gracias. Tu mensaje ha sido recibido — responderemos pronto.';
+                    document.body.appendChild(confirmation);
+                    setTimeout(() => confirmation.remove(), 3000);
+
+                    form.reset();
+                });
+            });
+        </script>
+    </body>
+</HTML>

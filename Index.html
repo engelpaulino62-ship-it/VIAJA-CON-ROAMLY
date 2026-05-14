@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<HTML lang="ES">
+    <HEAD>
+        <META charset="UTF-8">
+        <link rel="stylesheet" href="Style.css">
+        <title>Roamly.com</title>
+        
+    </HEAD>
+
+    <body>
+        <div class="container">
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="main-content">
+                <!-- MENÚ HORIZONTAL CON LOGO -->
+                <nav class="site-nav">
+                    <div class="nav-container">
+                        <div class="logo-nav">
+                            <img src="IMAGES/ROAMLY.png" alt="logo" class="logo-nav-img">
+                        </div>
+                        <ul>
+                            <li><a href="Index.html">Inicio</a></li>
+                            <li><a href="Destinos.html">Destinos</a></li>
+                            <li><a href="Cuenta.html">Cuenta</a></li>
+                            <li><a href="Ayuda.html">Ayuda</a></li>
+                            <li><a href="Nosotros.html">Nosotros</a></li>
+                            <li class="nav-trips">
+                                <a href="MisViajes.html" title="Mis Viajes"><img src="IMAGES/Avion.png" alt="Mis Viajes" class="airplane-icon"></a>
+                                <span class="notification-dot" id="notificationDot"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- VIDEO DE FONDO -->
+                <div class="video-background">
+                    <div class="video-overlay"></div>
+                    <div class="video-content">
+                        <h1>Explora el Mundo con Roamly</h1>
+                        <p>Cada destino es una promesa, nosotros te llevamos a cumplirla</p>
+                        <a href="Destinos.html" class="cta-button">Explorar Ahora</a>
+                    </div>
+                </div>
+
+                <!-- DESTINOS DESTACADOS -->
+                <section class="section">
+                    <h2>DESTINOS DESTACADOS</h2>
+                    <div class="gallery destinations-gallery">
+                        <div class="destination-card" data-pais="Francia" data-imagen="IMAGES PAISES/francia.jpeg">
+                            <img src="IMAGES PAISES/francia.jpeg" alt="Francia">
+                            <div class="destination-overlay">
+                                <h3>Francia</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Italia" data-imagen="IMAGES PAISES/italia.jpeg">
+                            <img src="IMAGES PAISES/italia.jpeg" alt="Italia">
+                            <div class="destination-overlay">
+                                <h3>Italia</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="República Dominicana" data-imagen="IMAGES PAISES/rep-dom.jpeg">
+                            <img src="IMAGES PAISES/REP DOM.jpeg" alt="República Dominicana">
+                            <div class="destination-overlay">
+                                <h3>Rep. Dominicana</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Emiratos Árabes Unidos" data-imagen="IMAGES PAISES/emiratos-arabes.jpeg">
+                            <img src="IMAGES PAISES/EMIRATOS ARABES.jpeg" alt="Emiratos Árabes Unidos">
+                            <div class="destination-overlay">
+                                <h3>Emiratos</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Grecia" data-imagen="IMAGES PAISES/grecia.jpeg">
+                            <img src="IMAGES PAISES/grecia.jpeg" alt="Grecia">
+                            <div class="destination-overlay">
+                                <h3>Grecia</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Japón" data-imagen="IMAGES PAISES/japon.jpeg">
+                            <img src="IMAGES PAISES/japon.jpeg" alt="Japón">
+                            <div class="destination-overlay">
+                                <h3>Japón</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="México" data-imagen="IMAGES PAISES/mexico.jpeg">
+                            <img src="IMAGES PAISES/mexico.jpeg" alt="México">
+                            <div class="destination-overlay">
+                                <h3>México</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Canadá" data-imagen="IMAGES PAISES/canada.jpeg">
+                            <img src="IMAGES PAISES/canada.jpeg" alt="Canadá">
+                            <div class="destination-overlay">
+                                <h3>Canadá</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Alemania" data-imagen="IMAGES PAISES/ALEMANIA.jpeg">
+                            <img src="IMAGES PAISES/ALEMANIA.jpeg" alt="Alemania">
+                            <div class="destination-overlay">
+                                <h3>Alemania</h3>
+                            </div>
+                        </div>
+                        <div class="destination-card" data-pais="Brasil" data-imagen="IMAGES PAISES/BRASIL.jpeg">
+                            <img src="IMAGES PAISES/BRASIL.jpeg" alt="Brasil">
+                            <div class="destination-overlay">
+                                <h3>Brasil</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="pie-pagina">
+            <div class="footer-contenido">
+                <div class="info-contacto">
+                    <h3>ROAMLY</h3>
+                    <p>Calle Falsa 123, Santo Domingo, República Dominicana</p>
+                    <p>Tel: +1 809-505-2010</p>
+                </div>
+                
+                <div class="horario">
+                    <h4>Horario de Atención</h4>
+                    <p>Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+
+                <div class="redes">
+                    <h4>Síguenos</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ROAMLY. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- Modal para seleccionar origen, fecha y personas -->
+        <div class="modal" id="cityModal" aria-hidden="true">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Seleccionar viaje</h2>
+                    <span class="close" id="modalClose" aria-label="Cerrar">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="tripForm" class="support-form">
+                        <div class="form-group">
+                            <label for="destination">Destino</label>
+                            <input type="text" id="destination" name="destination" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="origin">Desde (origen)</label>
+                            <input type="text" id="origin" name="origin" placeholder="Ciudad de salida" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Fecha</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="people">Personas</label>
+                            <input type="number" id="people" name="people" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Precio estimado</label>
+                            <div id="pricePreview" class="price-preview"></div>
+                        </div>
+
+                        <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:18px;">
+                            <button type="button" class="support-btn" id="confirmTrip">Confirmar</button>
+                            <button type="button" class="support-btn" id="cancelTrip" style="background:#bdc3c7;color:#111;">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="notifications.js"></script>
+
+<script src="script.js"></script>
+
+    </body>
+</HTML>
